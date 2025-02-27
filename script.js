@@ -5,8 +5,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsElement = document.getElementById('results');
     const namesContainer = document.getElementById('names-container');
     
-    // 后端API端点配置 - 使用Netlify Functions
-    const API_ENDPOINT = '/.netlify/functions/generate-names';
+    // 检测当前环境并设置相应的API端点
+    let API_ENDPOINT = '/.netlify/functions/generate-names';
+    
+    // 如果是在本地环境运行
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        API_ENDPOINT = '/api/generate-names';
+    }
+    // 如果是在GitHub Pages上运行（检测URL是否包含github.io）
+    else if (window.location.hostname.includes('github.io')) {
+        // 获取仓库名称作为基础路径
+        const pathSegments = window.location.pathname.split('/');
+        const repoName = pathSegments[1]; // 通常是第二个路径段
+        API_ENDPOINT = `/${repoName}/api/generate-names`;
+    }
     
     // 生成按钮点击事件
     generateBtn.addEventListener('click', async function() {
