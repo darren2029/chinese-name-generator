@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsElement = document.getElementById('results');
     const namesContainer = document.getElementById('names-container');
     
+    // 后端API端点配置 - 使用Netlify Functions
+    const API_ENDPOINT = '/.netlify/functions/generate-names';
+    
     // 生成按钮点击事件
     generateBtn.addEventListener('click', async function() {
         const englishName = englishNameInput.value.trim();
@@ -21,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         generateBtn.disabled = true;
         
         try {
-            // 调用本地后端API生成中文名
-            const response = await fetch('/api/generate-names', {
+            // 调用后端API
+            const response = await fetch(API_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
