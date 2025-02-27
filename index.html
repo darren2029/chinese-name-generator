@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Name Generator - Find Your Perfect Chinese Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="snake-icon.svg" alt="2025 Year of the Snake" class="snake-icon">
+                <div>
+                    <h1>Chinese Name Generator</h1>
+                    <p class="subtitle">Find a meaningful Chinese name with cultural significance</p>
+                    <p class="subtitle-cn">寻找一个有意义且具有文化内涵的中文名字</p>
+                    <p class="snake-year">2025 - Year of the Snake 蛇年</p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <label for="english-name">Enter your English name:</label>
+                <p class="label-cn">请输入您的英文名</p>
+                <input type="text" id="english-name" placeholder="e.g. John, Mary, David..." required>
+                <button id="generate-btn">Generate Chinese Name</button>
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Generating your Chinese names...</p>
+                <p class="loading-cn">正在生成中文名，请稍候...</p>
+            </div>
+            
+            <div class="results" id="results">
+                <h2>Recommended Chinese Names for 2025</h2>
+                <p class="results-subtitle">为您推荐的2025蛇年中文名</p>
+                <div class="names-container" id="names-container">
+                    <!-- Results will be generated here -->
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Chinese Name Generator | Powered by DeepSeek R1 AI</p>
+            <p class="footer-cn">中文名生成器 | 基于 DeepSeek R1 AI 技术</p>
+            <p class="snake-year-footer">祝您蛇年吉祥，万事如意！Happy Year of the Snake!</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
